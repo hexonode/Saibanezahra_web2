@@ -62,7 +62,7 @@ function showEliminationMessage() {
     // Create message container
     const messageContainer = document.createElement('div');
     messageContainer.style.cssText = `
-        background-color: white;
+        background-color: black;
         padding: 2rem;
         border-radius: 10px;
         text-align: center;
@@ -83,6 +83,7 @@ function showEliminationMessage() {
         transform: translateY(-20px);
         opacity: 0;
         animation: slideIn 0.5s ease 0.6s forwards;
+        text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
     `;
 
     // Create refresh button
@@ -100,6 +101,7 @@ function showEliminationMessage() {
         transform: translateY(20px);
         opacity: 0;
         animation: slideIn 0.5s ease 0.8s forwards;
+        box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
     `;
 
     // Add keyframes for animations
