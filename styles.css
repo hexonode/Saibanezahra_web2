@@ -5,34 +5,10 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #00bcd4;
-    --primary-dark: #0097a7;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --white: #ffffff;
-    --spacing-unit: 1rem;
-    --max-width: 1200px;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    overflow-x: hidden;
-}
-
-/* Mobile-first base styles */
-.container {
-    width: 100%;
-    padding: 0 var(--spacing-unit);
-    margin: 0 auto;
-    max-width: var(--max-width);
+    color: #333;
 }
 
 /* Header and Navigation */
@@ -43,43 +19,27 @@ header {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(5px);
-    padding: 1rem 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 var(--spacing-unit);
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo h1 {
-    color: var(--white);
-    font-size: 1.5rem;
+    color: white;
+    font-size: 1.8rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile Navigation */
 .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.nav-links.active {
     display: flex;
-    transform: translateX(0);
+    list-style: none;
+    gap: 1rem;
 }
 
 .nav-links li {
@@ -88,234 +48,207 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--white);
+    color: white;
     font-weight: 500;
-    font-size: 1.2rem;
+    transition: all 0.3s ease;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     background-color: rgba(0, 188, 212, 0.8);
     display: block;
-    min-width: 200px;
-    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.hamburger {
-    display: block;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--white);
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+.nav-links a:hover {
+    background-color: rgba(0, 151, 167, 0.9);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero.welcome-page {
-    min-height: 100vh;
+    height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('https://cdn.discordapp.com/attachments/1359850695213449326/1366366268889759814/image.png?ex=6810af40&is=680f5dc0&hm=a786fb5d7d5228cb8140da6ce25b2e07672747afa0e314adc4fc890308f516af&');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem var(--spacing-unit) 2rem;
+    color: white;
+    padding-top: 100px;
 }
 
 .hero-content {
-    max-width: 100%;
-    padding: 0 var(--spacing-unit);
+    max-width: 2000px;
+    padding: 0 2rem;
+    animation: fadeIn 2s ease-in;
 }
 
 .hero h2 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: inline-block;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .button-group {
     display: flex;
-    flex-direction: column;
     gap: 1rem;
-    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: #00bcd4;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    min-width: 200px;
-    text-align: center;
+}
+
+.contact-button {
+    background-color: #00bcd4;
+}
+
+.contact-button:hover {
+    background-color: #0097a7;
+}
+
+.cta-button:hover {
+    background-color: #0097a7;
 }
 
 /* Sections */
 section {
-    padding: 4rem 0;
+    padding: 5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* About Section */
+.about {
+    background-color: #f9f9f9;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+.about p {
+    color: #34495e;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Services Section */
+.services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    padding: 0 var(--spacing-unit);
 }
 
 .service-card {
-    background: var(--white);
-    padding: 1.5rem;
+    background: white;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease;
+}
+
+.service-card:hover i {
+    transform: scale(1.2) rotate(360deg);
+    color: #0097a7;
+}
+
+.service-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 /* Contact Section */
+.contact {
+    background-color: #f9f9f9;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
 .contact-info {
     text-align: center;
-    padding: 0 var(--spacing-unit);
 }
 
 .contact-info p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background-color: #25D366;
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    margin-top: 1rem;
-    min-width: 200px;
+.contact-info i {
+    color: #00bcd4;
+    margin-right: 0.5rem;
 }
 
 /* Footer */
 footer {
     background-color: #2c3e50;
-    color: var(--white);
+    color: white;
     padding: 2rem 0;
     text-align: center;
-}
-
-/* Media Queries */
-@media (min-width: 480px) {
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-    
-    .button-group {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        position: static;
-        height: auto;
-        background-color: transparent;
-        flex-direction: row;
-        transform: none;
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        min-width: auto;
-        font-size: 1rem;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h2 {
-        font-size: 3rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .container {
-        padding: 0 2rem;
-    }
-}
-
-/* Responsive Images */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Touch-friendly elements */
-button, 
-a, 
-input[type="submit"], 
-input[type="button"] {
-    min-height: 44px;
-    min-width: 44px;
-}
-
-/* Responsive Typography */
-h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
-h2 { font-size: clamp(1.3rem, 4vw, 2rem); }
-h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
-p { font-size: clamp(1rem, 2vw, 1.1rem); }
-
-/* Scroll Fade-in Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Leaves Animation */
@@ -337,32 +270,81 @@ p { font-size: clamp(1rem, 2vw, 1.1rem); }
 .leaves i {
     position: absolute;
     display: block;
-    font-size: 1.2rem;
-    animation: falling linear infinite;
+    font-size: 1.5rem;
+    animation: 
+        falling linear infinite,
+        fadeOut 1s ease-out forwards;
     opacity: 0;
 }
 
-/* Typewriter Animation */
-.typewriter {
-    overflow: hidden;
-    border-right: 0.15em solid aqua;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: 0.05em;
-    animation: 
-        typing 2s steps(40, end),
-        blink-caret 0.75s step-end infinite;
-    color: white;
+.leaves i:nth-child(1) {
+    left: 10%;
+    animation-duration: 15s;
+    animation-delay: 0s;
+    color: #ff69b4; /* Pink */
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+.leaves i:nth-child(2) {
+    left: 20%;
+    animation-duration: 18s;
+    animation-delay: 2s;
+    color: #32cd32; /* Green */
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: aqua }
+.leaves i:nth-child(3) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+    color: #ffa500; /* Orange */
+}
+
+.leaves i:nth-child(4) {
+    left: 40%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+    color: #ff69b4; /* Pink */
+}
+
+.leaves i:nth-child(5) {
+    left: 50%;
+    animation-duration: 14s;
+    animation-delay: 0.5s;
+    color: #32cd32; /* Green */
+}
+
+.leaves i:nth-child(6) {
+    left: 60%;
+    animation-duration: 17s;
+    animation-delay: 2.5s;
+    color: #ffa500; /* Orange */
+}
+
+.leaves i:nth-child(7) {
+    left: 70%;
+    animation-duration: 13s;
+    animation-delay: 1.5s;
+    color: #ff69b4; /* Pink */
+}
+
+.leaves i:nth-child(8) {
+    left: 80%;
+    animation-duration: 19s;
+    animation-delay: 3.5s;
+    color: #32cd32; /* Green */
+}
+
+.leaves i:nth-child(9) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0.8s;
+    color: #ffa500; /* Orange */
+}
+
+.leaves i:nth-child(10) {
+    left: 95%;
+    animation-duration: 20s;
+    animation-delay: 4s;
+    color: #ff69b4; /* Pink */
 }
 
 @keyframes falling {
@@ -380,4 +362,99 @@ p { font-size: clamp(1rem, 2vw, 1.1rem); }
         transform: translateY(100vh) rotate(360deg);
         opacity: 0;
     }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Typewriter Animation */
+.typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid aqua;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.05em;
+    animation: 
+        typing 2s steps(40, end),
+        blink-caret 0.75s step-end infinite,
+        fadeIn 2s ease-in;
+    color: white;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: aqua }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add some delay to each section for a cascading effect */
+#about.fade-in {
+    transition-delay: 0.2s;
+}
+
+#services.fade-in {
+    transition-delay: 0.4s;
+}
+
+#contact.fade-in {
+    transition-delay: 0.6s;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button i {
+    font-size: 1.2rem;
 } 
