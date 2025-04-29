@@ -18,6 +18,9 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
+            <a href="index.html" class="mobile-home-button">
+                <i class="fas fa-home"></i>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -89,111 +92,147 @@
             const ladiesSearch = document.getElementById('ladiesSearch');
             const gentsGrid = document.getElementById('gentsGrid');
             const ladiesGrid = document.getElementById('ladiesGrid');
-
-            // Gents data - You can edit this list
+    
+            // Gents data - Updated with provided information
             const gentsData = [
-                { rollNo: 1, name: "Ahmed Khan", attendance: 90 },
-                { rollNo: 2, name: "Muhammad Ali", attendance: 95 },
-                { rollNo: 3, name: "Usman Malik", attendance: 85 },
-                { rollNo: 4, name: "Abdullah Shah", attendance: 88 },
-                { rollNo: 5, name: "Hassan Raza", attendance: 92 },
-                { rollNo: 6, name: "Zain Ahmed", attendance: 87 },
-                { rollNo: 7, name: "Bilal Farooq", attendance: 93 },
-                { rollNo: 8, name: "Hamza Hussain", attendance: 82 },
-                { rollNo: 9, name: "Omar Iqbal", attendance: 89 },
-                { rollNo: 10, name: "Yusuf Rahman", attendance: 91 },
-                { rollNo: 11, name: "Ali Siddiqui", attendance: 78 },
-                { rollNo: 12, name: "Ibrahim Qureshi", attendance: 84 },
-                { rollNo: 13, name: "Yunus Chaudhry", attendance: 79 },
-                { rollNo: 14, name: "Musa Butt", attendance: 86 },
-                { rollNo: 15, name: "Haris Sheikh", attendance: 94 },
-                { rollNo: 16, name: "Saad Mirza", attendance: 88 },
-                { rollNo: 17, name: "Talha Baig", attendance: 81 },
-                { rollNo: 18, name: "Zubair Hashmi", attendance: 90 },
-                { rollNo: 19, name: "Asad Zaidi", attendance: 83 },
-                { rollNo: 20, name: "Fahad Naqvi", attendance: 87 },
-                { rollNo: 21, name: "Waqar Khan", attendance: 92 },
-                { rollNo: 22, name: "Shoaib Ali", attendance: 85 },
-                { rollNo: 23, name: "Imran Malik", attendance: 89 },
-                { rollNo: 24, name: "Kamran Shah", attendance: 76 },
-                { rollNo: 25, name: "Noman Raza", attendance: 93 },
-                { rollNo: 26, name: "Rizwan Ahmed", attendance: 88 },
-                { rollNo: 27, name: "Junaid Farooq", attendance: 82 },
-                { rollNo: 28, name: "Tariq Hussain", attendance: 90 },
-                { rollNo: 29, name: "Nadeem Iqbal", attendance: 85 },
-                { rollNo: 30, name: "Arif Rahman", attendance: 91 },
-                { rollNo: 31, name: "Kashif Siddiqui", attendance: 79 },
-                { rollNo: 32, name: "Shahid Qureshi", attendance: 87 },
-                { rollNo: 33, name: "Naveed Chaudhry", attendance: 84 },
-                { rollNo: 34, name: "Rashid Butt", attendance: 92 },
-                { rollNo: 35, name: "Sajid Sheikh", attendance: 88 },
-                { rollNo: 36, name: "Majid Mirza", attendance: 81 },
-                { rollNo: 37, name: "Zahid Baig", attendance: 90 },
-                { rollNo: 38, name: "Farhan Hashmi", attendance: 86 },
-                { rollNo: 39, name: "Adnan Zaidi", attendance: 83 },
-                { rollNo: 40, name: "Salman Naqvi", attendance: 89 },
-                { rollNo: 41, name: "Danish Khan", attendance: 94 },
-                { rollNo: 42, name: "Faizan Ali", attendance: 87 },
-                { rollNo: 43, name: "Adeel Malik", attendance: 82 },
-                { rollNo: 44, name: "Waseem Shah", attendance: 90 },
-                { rollNo: 45, name: "Naeem Raza", attendance: 85 },
-                { rollNo: 46, name: "Sohail Ahmed", attendance: 91 },
-                { rollNo: 47, name: "Khalid Farooq", attendance: 78 },
-                { rollNo: 48, name: "Nasir Hussain", attendance: 86 },
-                { rollNo: 49, name: "Asif Iqbal", attendance: 92 },
-                { rollNo: 50, name: "Javed Rahman", attendance: 88 },
-                { rollNo: 51, name: "Rafiq Siddiqui", attendance: 84 },
-                { rollNo: 52, name: "Iqbal Qureshi", attendance: 90 },
-                { rollNo: 53, name: "Shafiq Chaudhry", attendance: 85 },
-                { rollNo: 54, name: "Zafar Butt", attendance: 79 },
-                { rollNo: 55, name: "Nazir Sheikh", attendance: 87 },
-                { rollNo: 56, name: "Azhar Mirza", attendance: 93 },
-                { rollNo: 57, name: "Rafique Baig", attendance: 88 },
-                { rollNo: 58, name: "Sarfaraz Hashmi", attendance: 82 },
-                { rollNo: 59, name: "Niaz Zaidi", attendance: 90 },
-                { rollNo: 60, name: "Riaz Naqvi", attendance: 86 },
-                { rollNo: 61, name: "Saeed Khan", attendance: 91 },
-                { rollNo: 62, name: "Zahoor Ali", attendance: 85 },
-                { rollNo: 63, name: "Noor Malik", attendance: 89 },
-                { rollNo: 64, name: "Rauf Shah", attendance: 83 },
-                { rollNo: 65, name: "Sultan Raza", attendance: 87 },
-                { rollNo: 66, name: "Nazir Ahmed", attendance: 92 },
-                { rollNo: 67, name: "Zaman Farooq", attendance: 88 },
-                { rollNo: 68, name: "Nawaz Hussain", attendance: 84 },
-                { rollNo: 69, name: "Shahzad Iqbal", attendance: 90 },
-                { rollNo: 70, name: "Nazim Rahman", attendance: 86 },
-                { rollNo: 71, name: "Rashid Siddiqui", attendance: 82 },
-                { rollNo: 72, name: "Nazir Qureshi", attendance: 89 },
-                { rollNo: 73, name: "Zahid Chaudhry", attendance: 85 },
-                { rollNo: 74, name: "Naeem Butt", attendance: 91 },
-                { rollNo: 75, name: "Sajid Sheikh", attendance: 87 },
-                { rollNo: 76, name: "Majid Mirza", attendance: 83 },
-                { rollNo: 77, name: "Zahid Baig", attendance: 90 },
-                { rollNo: 78, name: "Farhan Hashmi", attendance: 86 },
-                { rollNo: 79, name: "Adnan Zaidi", attendance: 92 },
-                { rollNo: 80, name: "Salman Naqvi", attendance: 88 },
-                { rollNo: 81, name: "Danish Khan", attendance: 84 },
-                { rollNo: 82, name: "Faizan Ali", attendance: 90 },
-                { rollNo: 83, name: "Adeel Malik", attendance: 85 },
-                { rollNo: 84, name: "Waseem Shah", attendance: 79 },
-                { rollNo: 85, name: "Naeem Raza", attendance: 87 },
-                { rollNo: 86, name: "Sohail Ahmed", attendance: 93 },
-                { rollNo: 87, name: "Khalid Farooq", attendance: 88 },
-                { rollNo: 88, name: "Nasir Hussain", attendance: 82 },
-                { rollNo: 89, name: "Asif Iqbal", attendance: 90 },
-                { rollNo: 90, name: "Javed Rahman", attendance: 86 },
-                { rollNo: 91, name: "Rafiq Siddiqui", attendance: 91 },
-                { rollNo: 92, name: "Iqbal Qureshi", attendance: 85 },
-                { rollNo: 93, name: "Shafiq Chaudhry", attendance: 89 },
-                { rollNo: 94, name: "Zafar Butt", attendance: 83 },
-                { rollNo: 95, name: "Nazir Sheikh", attendance: 87 },
-                { rollNo: 96, name: "Azhar Mirza", attendance: 92 },
-                { rollNo: 97, name: "Rafique Baig", attendance: 88 },
-                { rollNo: 98, name: "Sarfaraz Hashmi", attendance: 84 },
-                { rollNo: 99, name: "Niaz Zaidi", attendance: 90 },
-                { rollNo: 100, name: "Riaz Naqvi", attendance: 86 }
+                { rollNo: 1, name: "Shahryar Khan", attendance: 36.36 },
+                { rollNo: 2, name: "Syed Adeel Raza", attendance: 22.73 },
+                { rollNo: 3, name: "Shafqat Raza", attendance: 22.73 },
+                { rollNo: 4, name: "Shahzad Mehdi", attendance: 95.45 },
+                { rollNo: 5, name: "Kousar Abbas", attendance: 0.00 },
+                { rollNo: 6, name: "Hafiz Naseem Abbas", attendance: 90.91 },
+                { rollNo: 7, name: "Saqib Raza", attendance: 95.45 },
+                { rollNo: 8, name: "Muhammad Raza Abbas", attendance: 13.64 },
+                { rollNo: 9, name: "Furqan Ali", attendance: 100.00 },
+                { rollNo: 10, name: "Sarim Raza", attendance: 0.00 },
+                { rollNo: 11, name: "Muhammad Ali jaun", attendance: 0.00 },
+                { rollNo: 12, name: "Sultan Mahmood", attendance: 0.00 },
+                { rollNo: 13, name: "Imran Abbas Siddique", attendance: 95.45 },
+                { rollNo: 14, name: "Irtaza Naqvi", attendance: 59.00 },
+                { rollNo: 15, name: "Masoor Bhai", attendance: 9.00 },
+                { rollNo: 16, name: "Muhammad Waseem Abbas", attendance: 9.00 },
+                { rollNo: 17, name: "Aoun Abbas", attendance: 0.00 },
+                { rollNo: 18, name: "Syed Zaheer Abbas", attendance: 100.00 },
+                { rollNo: 19, name: "Ulfat Abbas", attendance: 100.00 },
+                { rollNo: 20, name: "Iqbal Mehdi", attendance: 90.91 },
+                { rollNo: 21, name: "Irtaza Hassan", attendance: 86.36 },
+                { rollNo: 22, name: "Syed Muhammad Raza", attendance: 81.00 },
+                { rollNo: 23, name: "Meher Ghulam Abbas", attendance: 0.00 },
+                { rollNo: 24, name: "Farhan Abbas", attendance: 0.00 },
+                { rollNo: 25, name: "Muhammad Baqar Khan", attendance: 13.64 },
+                { rollNo: 27, name: "Noman Ali", attendance: 22.00 },
+                { rollNo: 28, name: "Tabeer Abbas", attendance: 27.00 },
+                { rollNo: 29, name: "Zafar Hussain", attendance: 0.00 },
+                { rollNo: 30, name: "Rehan Haider", attendance: 68.00 },
+                { rollNo: 31, name: "Alliyan Haider", attendance: 45.00 },
+                { rollNo: 32, name: "Abid Hussain", attendance: 0.00 },
+                { rollNo: 33, name: "Meesam Raza", attendance: 4.55 },
+                { rollNo: 34, name: "Imran Taqi", attendance: 31.00 },
+                { rollNo: 35, name: "Ali Miqdad Raza", attendance: 81.00 },
+                { rollNo: 36, name: "Haqoo", attendance: 54.00 },
+                { rollNo: 37, name: "S.Muhammad.Hassan", attendance: 90.00 },
+                { rollNo: 38, name: "Muhammad Kumail Azhar", attendance: 0.00 },
+                { rollNo: 39, name: "Meesam Naqvi", attendance: 0.00 },
+                { rollNo: 40, name: "Qaisar Hussain", attendance: 0.00 },
+                { rollNo: 41, name: "Qaswar Abbas", attendance: 0.00 },
+                { rollNo: 42, name: "Ali Haider", attendance: 0.00 },
+                { rollNo: 43, name: "Musa Raza", attendance: 0.00 },
+                { rollNo: 44, name: "Muzaffar Abbas", attendance: 9.00 },
+                { rollNo: 45, name: "Nawaz Jafri", attendance: 0.00 },
+                { rollNo: 46, name: "Mohsin Kazmi", attendance: 0.00 },
+                { rollNo: 47, name: "Hasnain Mehdi", attendance: 86.00 },
+                { rollNo: 48, name: "Mazhar Abbas", attendance: 0.00 },
+                { rollNo: 49, name: "Azhar Hassan", attendance: 0.00 },
+                { rollNo: 50, name: "M.Mehneel Mehdi Khan", attendance: 40.91 },
+                { rollNo: 51, name: "Mehdi Ghazanfar", attendance: 0.00 },
+                { rollNo: 52, name: "Muhammad Salik", attendance: 90.00 },
+                { rollNo: 53, name: "Jabir Hussain", attendance: 0.00 },
+                { rollNo: 54, name: "Aamir Abbas", attendance: 0.00 },
+                { rollNo: 55, name: "Muhammad Baqir Hassan", attendance: 22.73 },
+                { rollNo: 56, name: "Wajid Ali Sargana", attendance: 0.00 },
+                { rollNo: 57, name: "Muhammad Saqlain", attendance: 0.00 },
+                { rollNo: 58, name: "Javed Iqbal Khan", attendance: 18.00 },
+                { rollNo: 59, name: "Kumail Ali Shah", attendance: 0.00 },
+                { rollNo: 60, name: "Farhan Hashmi", attendance: 0.00 },
+                { rollNo: 61, name: "Naveed Mehdi", attendance: 0.00 },
+                { rollNo: 62, name: "Jaffar Hussain", attendance: 100.00 },
+                { rollNo: 63, name: "Mohd Yaqoob", attendance: 100.00 },
+                { rollNo: 64, name: "Ali Raza", attendance: 100.00 },
+                { rollNo: 65, name: "Mahmood Raza", attendance: 100.00 },
+                { rollNo: 66, name: "Sohaib Raza", attendance: 95.00 },
+                { rollNo: 67, name: "Mohd.Qasim", attendance: 100.00 },
+                { rollNo: 68, name: "Ahmad Raza", attendance: 63.00 },
+                { rollNo: 69, name: "Wajahat Ali", attendance: 68.00 },
+                { rollNo: 70, name: "Mohammad Aon Abbas", attendance: 81.00 },
+                { rollNo: 71, name: "Afnan Haider", attendance: 86.00 },
+                { rollNo: 72, name: "Mohd.Kamran", attendance: 77.00 },
+                { rollNo: 73, name: "Sajid Nawaz", attendance: 86.00 },
+                { rollNo: 74, name: "Saqlain Abbas", attendance: 100.00 },
+                { rollNo: 76, name: "Ghadder Sadiq", attendance: 90.00 },
+                { rollNo: 77, name: "Taqeer Hussain", attendance: 86.00 },
+                { rollNo: 78, name: "Umeed Ali", attendance: 68.00 },
+                { rollNo: 79, name: "Fazal Abbas", attendance: 95.00 },
+                { rollNo: 80, name: "Yousaf Ali", attendance: 86.00 },
+                { rollNo: 81, name: "Najaf Ali", attendance: 95.00 },
+                { rollNo: 82, name: "Moh.ali", attendance: 90.00 },
+                { rollNo: 83, name: "Mohd. Hassan Raza", attendance: 4.00 },
+                { rollNo: 84, name: "Mohd.ali Bhutta", attendance: 31.00 },
+                { rollNo: 85, name: "Syed Saqlain Shah", attendance: 77.00 },
+                { rollNo: 86, name: "M.Mushaid", attendance: 13.00 },
+                { rollNo: 87, name: "Abid Hussain", attendance: 90.00 },
+                { rollNo: 88, name: "Naviez Khan", attendance: 86.00 },
+                { rollNo: 89, name: "Noor Hassan Zaidi", attendance: 100.00 },
+                { rollNo: 90, name: "Shahzaib Hussain", attendance: 13.00 },
+                { rollNo: 91, name: "Mustehsan Naqvi", attendance: 95.00 },
+                { rollNo: 92, name: "Alamdar Hussain", attendance: 81.00 },
+                { rollNo: 93, name: "M. Sabtain", attendance: 77.00 },
+                { rollNo: 94, name: "Qamar Abbas", attendance: 4.00 },
+                { rollNo: 95, name: "Tasadaq Mehdi", attendance: 4.00 },
+                { rollNo: 96, name: "M.Tariq", attendance: 4.00 },
+                { rollNo: 97, name: "Azhar Hussain", attendance: 95.00 },
+                { rollNo: 98, name: "S.Ghazanfar Ali", attendance: 13.00 },
+                { rollNo: 99, name: "S.Zaigam Abbas", attendance: 13.00 },
+                { rollNo: 100, name: "S.Zohair Naqvi", attendance: 50.00 },
+                { rollNo: 101, name: "Zargham Ali", attendance: 27.00 },
+                { rollNo: 103, name: "M.Imran", attendance: 81.00 },
+                { rollNo: 104, name: "Fateh Abbas", attendance: 68.00 },
+                { rollNo: 105, name: "M.Waqas Abid", attendance: 86.00 },
+                { rollNo: 106, name: "Farhan Abbas", attendance: 4.00 },
+                { rollNo: 107, name: "M.Hassan", attendance: 72.00 },
+                { rollNo: 108, name: "Ghulam Akbar Shah", attendance: 90.00 },
+                { rollNo: 109, name: "Qusain Abbas Shah", attendance: 77.00 },
+                { rollNo: 110, name: "Meesam Abbas", attendance: 54.00 },
+                { rollNo: 112, name: "Ali Hamza", attendance: 81.00 },
+                { rollNo: 113, name: "M.Hussain Mehdi", attendance: 81.00 },
+                { rollNo: 114, name: "Ali Ashbeel", attendance: 31.00 },
+                { rollNo: 115, name: "M.Kumail Raza", attendance: 27.00 },
+                { rollNo: 116, name: "Zeeshan Abbas", attendance: 18.00 },
+                { rollNo: 117, name: "Fakhar Kazmi", attendance: 9.00 },
+                { rollNo: 118, name: "Abbas Jaffar", attendance: 13.00 },
+                { rollNo: 119, name: "Hassan Mujataba", attendance: 9.00 },
+                { rollNo: 120, name: "Naseem Shah", attendance: 4.00 },
+                { rollNo: 121, name: "Abuzar Mehdi", attendance: 77.00 },
+                { rollNo: 122, name: "M.Shah Nwaz", attendance: 72.00 },
+                { rollNo: 123, name: "Ali Musadiq", attendance: 4.00 },
+                { rollNo: 124, name: "Ali Raza", attendance: 68.00 },
+                { rollNo: 125, name: "Zahoor Shah", attendance: 41.00 },
+                { rollNo: 126, name: "S.Yassin Shah", attendance: 13.00 },
+                { rollNo: 127, name: "Dr.Adnan Ali", attendance: 13.00 },
+                { rollNo: 128, name: "Daniyal Habib", attendance: 9.00 },
+                { rollNo: 129, name: "Raza Abbas", attendance: 23.00 },
+                { rollNo: 130, name: "Hashir Zaidi", attendance: 63.00 },
+                { rollNo: 131, name: "S.Shehroz Haider", attendance: 81.00 },
+                { rollNo: 132, name: "Imran Shah", attendance: 31.00 },
+                { rollNo: 133, name: "Chaman Abbas", attendance: 4.00 },
+                { rollNo: 134, name: "Syed Asim Raza", attendance: 4.00 },
+                { rollNo: 136, name: "Ali Naqi", attendance: 9.00 },
+                { rollNo: 138, name: "Hassan Raza", attendance: 27.00 },
+                { rollNo: 139, name: "Baqar Raza", attendance: 4.00 },
+                { rollNo: 140, name: "Ghulam Asghar", attendance: 54.00 },
+                { rollNo: 141, name: "Muhammad shoaib", attendance: 36.00 },
+                { rollNo: 142, name: "Wajid Hussain", attendance: 4.00 }
             ];
-
+    
             // Ladies data - You can edit this list
             const ladiesData = [
                 { rollNo: 1, name: "Aisha Siddiqui", attendance: 92 },
@@ -225,83 +264,14 @@
                 { rollNo: 27, name: "Iman Hashmi", attendance: 89 },
                 { rollNo: 28, name: "Javeria Zaidi", attendance: 83 },
                 { rollNo: 29, name: "Kainat Naqvi", attendance: 87 },
-                { rollNo: 30, name: "Lubna Khan", attendance: 92 },
-                { rollNo: 31, name: "Madiha Ali", attendance: 88 },
-                { rollNo: 32, name: "Nadia Malik", attendance: 84 },
-                { rollNo: 33, name: "Omaima Shah", attendance: 90 },
-                { rollNo: 34, name: "Palwasha Raza", attendance: 86 },
-                { rollNo: 35, name: "Quratulain Ahmed", attendance: 91 },
-                { rollNo: 36, name: "Rida Farooq", attendance: 85 },
-                { rollNo: 37, name: "Saba Hussain", attendance: 89 },
-                { rollNo: 38, name: "Tahira Iqbal", attendance: 83 },
-                { rollNo: 39, name: "Uzma Rahman", attendance: 87 },
-                { rollNo: 40, name: "Varda Siddiqui", attendance: 92 },
-                { rollNo: 41, name: "Wajiha Qureshi", attendance: 88 },
-                { rollNo: 42, name: "Xenia Chaudhry", attendance: 84 },
-                { rollNo: 43, name: "Yasmin Butt", attendance: 90 },
-                { rollNo: 44, name: "Zainab Sheikh", attendance: 86 },
-                { rollNo: 45, name: "Abeer Mirza", attendance: 91 },
-                { rollNo: 46, name: "Bisma Baig", attendance: 85 },
-                { rollNo: 47, name: "Camelia Hashmi", attendance: 89 },
-                { rollNo: 48, name: "Dania Zaidi", attendance: 83 },
-                { rollNo: 49, name: "Esha Naqvi", attendance: 87 },
-                { rollNo: 50, name: "Farah Khan", attendance: 92 },
-                { rollNo: 51, name: "Gulnaz Ali", attendance: 88 },
-                { rollNo: 52, name: "Hadiqa Malik", attendance: 84 },
-                { rollNo: 53, name: "Iqra Shah", attendance: 90 },
-                { rollNo: 54, name: "Jannat Raza", attendance: 86 },
-                { rollNo: 55, name: "Kiran Ahmed", attendance: 91 },
-                { rollNo: 56, name: "Laila Farooq", attendance: 85 },
-                { rollNo: 57, name: "Mehwish Hussain", attendance: 89 },
-                { rollNo: 58, name: "Nida Iqbal", attendance: 83 },
-                { rollNo: 59, name: "Omaima Rahman", attendance: 87 },
-                { rollNo: 60, name: "Parveen Siddiqui", attendance: 92 },
-                { rollNo: 61, name: "Qudsia Qureshi", attendance: 88 },
-                { rollNo: 62, name: "Rukhsana Chaudhry", attendance: 84 },
-                { rollNo: 63, name: "Sadia Butt", attendance: 90 },
-                { rollNo: 64, name: "Tahira Sheikh", attendance: 86 },
-                { rollNo: 65, name: "Urooj Mirza", attendance: 91 },
-                { rollNo: 66, name: "Varda Baig", attendance: 85 },
-                { rollNo: 67, name: "Wajiha Hashmi", attendance: 89 },
-                { rollNo: 68, name: "Xenia Zaidi", attendance: 83 },
-                { rollNo: 69, name: "Yasmin Naqvi", attendance: 87 },
-                { rollNo: 70, name: "Zara Khan", attendance: 92 },
-                { rollNo: 71, name: "Abeer Ali", attendance: 88 },
-                { rollNo: 72, name: "Bisma Malik", attendance: 84 },
-                { rollNo: 73, name: "Camelia Shah", attendance: 90 },
-                { rollNo: 74, name: "Dania Raza", attendance: 86 },
-                { rollNo: 75, name: "Esha Ahmed", attendance: 91 },
-                { rollNo: 76, name: "Farah Farooq", attendance: 85 },
-                { rollNo: 77, name: "Gulnaz Hussain", attendance: 89 },
-                { rollNo: 78, name: "Hadiqa Iqbal", attendance: 83 },
-                { rollNo: 79, name: "Iqra Rahman", attendance: 87 },
-                { rollNo: 80, name: "Jannat Siddiqui", attendance: 92 },
-                { rollNo: 81, name: "Kiran Qureshi", attendance: 88 },
-                { rollNo: 82, name: "Laila Chaudhry", attendance: 84 },
-                { rollNo: 83, name: "Mehwish Butt", attendance: 90 },
-                { rollNo: 84, name: "Nida Sheikh", attendance: 86 },
-                { rollNo: 85, name: "Omaima Mirza", attendance: 91 },
-                { rollNo: 86, name: "Parveen Baig", attendance: 85 },
-                { rollNo: 87, name: "Qudsia Hashmi", attendance: 89 },
-                { rollNo: 88, name: "Rukhsana Zaidi", attendance: 83 },
-                { rollNo: 89, name: "Sadia Naqvi", attendance: 87 },
-                { rollNo: 90, name: "Tahira Khan", attendance: 92 },
-                { rollNo: 91, name: "Urooj Ali", attendance: 88 },
-                { rollNo: 92, name: "Varda Malik", attendance: 84 },
-                { rollNo: 93, name: "Wajiha Shah", attendance: 90 },
-                { rollNo: 94, name: "Xenia Raza", attendance: 86 },
-                { rollNo: 95, name: "Yasmin Ahmed", attendance: 91 },
-                { rollNo: 96, name: "Zara Farooq", attendance: 85 },
-                { rollNo: 97, name: "Abeer Hussain", attendance: 89 },
-                { rollNo: 98, name: "Bisma Iqbal", attendance: 83 },
-                { rollNo: 99, name: "Camelia Rahman", attendance: 87 },
-                { rollNo: 100, name: "Dania Siddiqui", attendance: 92 }
+                { rollNo: 30, name: "Lubna Khan", attendance: 92 }
             ];
-
+    
+            // Rest of the JavaScript code remains the same...
             function getInitials(name) {
                 return name.split(' ').map(word => word[0]).join('').toUpperCase();
             }
-
+    
             function getRandomColor() {
                 const colors = [
                     '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEEAD',
@@ -309,7 +279,7 @@
                 ];
                 return colors[Math.floor(Math.random() * colors.length)];
             }
-
+    
             function createStudentCard(student) {
                 const isEligible = student.attendance >= 80;
                 const card = document.createElement('div');
@@ -332,17 +302,17 @@
                         ${isEligible ? '✓ Good Attendance' : '✗ Low Attendance'}
                     </div>
                 `;
-
+    
                 return card;
             }
-
+    
             function populateGrid(grid, data) {
                 grid.innerHTML = '';
                 data.forEach(student => {
                     grid.appendChild(createStudentCard(student));
                 });
             }
-
+    
             // Search functionality
             function setupSearch(input, grid, data) {
                 input.addEventListener('input', () => {
@@ -354,7 +324,7 @@
                     populateGrid(grid, filteredData);
                 });
             }
-
+    
             // Tab switching
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -365,7 +335,7 @@
                     document.getElementById(tabId).classList.add('active');
                 });
             });
-
+    
             // Initialize grids and search
             populateGrid(gentsGrid, gentsData);
             populateGrid(ladiesGrid, ladiesData);
@@ -373,5 +343,3 @@
             setupSearch(ladiesSearch, ladiesGrid, ladiesData);
         });
     </script>
-</body>
-</html> 
