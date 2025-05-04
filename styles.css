@@ -29,6 +29,34 @@ nav {
     margin: 0 auto;
 }
 
+.mobile-home-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(0, 188, 212, 0.8);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+}
+
+.mobile-home-button i {
+    font-size: 1.2rem;
+}
+
+.mobile-home-button:hover {
+    background-color: rgba(0, 151, 167, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Navigation Styles */
 .logo h1 {
     color: white;
     font-size: 1.8rem;
@@ -66,7 +94,7 @@ nav {
 .hero.welcome-page {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://cdn.discordapp.com/attachments/1359850695213449326/1366366268889759814/image.png?ex=6810af40&is=680f5dc0&hm=a786fb5d7d5228cb8140da6ce25b2e07672747afa0e314adc4fc890308f516af&');
+                url('https://cdn.discordapp.com/attachments/1359850695213449326/1366366268889759814/image.png?ex=68189840&is=681746c0&hm=a7830fd079130f51539465bcf3ab8fbf6186b9aa4a876b74981a7e172c537cd0&');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -186,13 +214,16 @@ section {
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, border 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-card.visible {
@@ -202,6 +233,37 @@ section {
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.2);
+    border-color: #00bcd4;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(224, 247, 250, 0.95));
+}
+
+.service-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    animation: cardPulse 1.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .service-card i {
@@ -212,8 +274,24 @@ section {
 }
 
 .service-card:hover i {
+    color: #00bcd4;
     transform: scale(1.2) rotate(360deg);
+}
+
+.service-card:hover h3 {
+    color: #00bcd4;
+}
+
+.service-card:hover p {
     color: #0097a7;
+}
+
+.service-card:hover .exam-button,
+.service-card:hover .prayer-button,
+.service-card:hover .attendance-button {
+    background-color: #00bcd4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
 }
 
 .service-card:nth-child(1) i {
@@ -561,17 +639,17 @@ footer {
 
 .prayer-card i {
     font-size: 2.5rem;
-    color: #8e44ad;
+    color: #06eeff;
     margin-bottom: 1rem;
 }
 
 .prayer-card h3 {
-    color: #2c3e50;
+    color: #1c3247;
     margin-bottom: 0.5rem;
 }
 
 .prayer-card .time {
-    color: #8e44ad;
+    color: #2fecec;
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -926,14 +1004,25 @@ footer {
 
 /* Contact Section Styles */
 .contact-section {
+    margin: 2rem 0;
     text-align: center;
-    margin: 1.5rem 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 1rem;
 }
 
 .contact-message {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 1rem;
+    color: #666;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .contact-button {
@@ -944,9 +1033,9 @@ footer {
     background-color: #00bcd4;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 5px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .contact-button:hover {
@@ -954,17 +1043,9 @@ footer {
     transform: translateY(-2px);
 }
 
-.contact-button i {
-    font-size: 1.1rem;
-}
-
 @media (max-width: 768px) {
-    .contact-message {
-        font-size: 1.1rem;
-    }
-    
-    .contact-button {
-        padding: 0.7rem 1.2rem;
+    .contact-content {
+        gap: 1rem;
     }
 }
 
@@ -1613,4 +1694,274 @@ footer {
     .mobile-home-button {
         display: block;
     }
-} 
+}
+
+/* Unified Card Hover Effects */
+.service-card,
+.prayer-card,
+.exam-card,
+.student-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: white;
+}
+
+.service-card:hover,
+.prayer-card:hover,
+.exam-card:hover,
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.2);
+    border-color: #00bcd4;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(224, 247, 250, 0.95));
+}
+
+.service-card:hover::after,
+.prayer-card:hover::after,
+.exam-card:hover::after,
+.student-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #00bcd4;
+    border-radius: inherit;
+    animation: cardPulse 1.5s infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Icon and Text Color Changes on Hover */
+.service-card:hover i,
+.prayer-card:hover i,
+.exam-card:hover i {
+    color: #00bcd4;
+    transform: scale(1.2) rotate(360deg);
+}
+
+.service-card:hover h3,
+.prayer-card:hover h3,
+.exam-card:hover h3 {
+    color: #00bcd4;
+}
+
+.service-card:hover p,
+.prayer-card:hover p,
+.exam-card:hover p {
+    color: #0097a7;
+}
+
+/* Button Hover Effects */
+.service-card:hover .exam-button,
+.service-card:hover .prayer-button,
+.service-card:hover .attendance-button,
+.exam-card:hover .exam-button,
+.prayer-card:hover .prayer-button {
+    background-color: #00bcd4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Student Card Specific Hover Effects */
+.student-card:hover .initials-circle {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+.student-card:hover .progress-fill {
+    background: linear-gradient(90deg, #00bcd4, #00e5ff);
+}
+
+.student-card:hover .eligibility-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Maintain Card Specific Styles */
+.student-card.eligible:hover {
+    border-color: #27ae60;
+}
+
+.student-card.not-eligible:hover {
+    border-color: #e74c3c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-card:hover,
+    .prayer-card:hover,
+    .exam-card:hover,
+    .student-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .service-card:hover::after,
+    .prayer-card:hover::after,
+    .exam-card:hover::after,
+    .student-card:hover::after {
+        animation: cardPulse 2s infinite;
+    }
+}
+
+/* Ensure Smooth Transitions */
+.service-card,
+.prayer-card,
+.exam-card,
+.student-card,
+.service-card i,
+.prayer-card i,
+.exam-card i,
+.student-card .initials-circle,
+.service-card h3,
+.prayer-card h3,
+.exam-card h3,
+.service-card p,
+.prayer-card p,
+.exam-card p,
+.service-card .exam-button,
+.service-card .prayer-button,
+.service-card .attendance-button,
+.exam-card .exam-button,
+.prayer-card .prayer-button,
+.student-card .progress-fill,
+.student-card .eligibility-tag {
+    transition: all 0.3s ease;
+}
+
+/* Student Card Performance-based Hover Effects */
+.student-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.student-card.eligible {
+    border-color: #27ae60;
+}
+
+.student-card.not-eligible {
+    border-color: #e74c3c;
+}
+
+/* Hover effects for passing students (80% and above) */
+.student-card.eligible:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(39, 174, 96, 0.3);
+    border-color: #27ae60;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(39, 174, 96, 0.1));
+}
+
+.student-card.eligible:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #27ae60;
+    border-radius: inherit;
+    animation: cardPulseGreen 1.5s infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hover effects for failing students (below 80%) */
+.student-card.not-eligible:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+    border-color: #e74c3c;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(231, 76, 60, 0.1));
+}
+
+.student-card.not-eligible:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #e74c3c;
+    border-radius: inherit;
+    animation: cardPulseRed 1.5s infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animation keyframes for passing students */
+@keyframes cardPulseGreen {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes for failing students */
+@keyframes cardPulseRed {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Additional hover effects for card elements */
+.student-card.eligible:hover .initials-circle {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.student-card.not-eligible:hover .initials-circle {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.student-card.eligible:hover .progress-fill {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+.student-card.not-eligible:hover .progress-fill {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.student-card.eligible:hover .eligibility-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.student-card.not-eligible:hover .eligibility-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
