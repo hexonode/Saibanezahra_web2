@@ -98,7 +98,7 @@ nav {
 .hero.welcome-page {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://cdn.discordapp.com/attachments/1359850695213449326/1366366268889759814/image.png?ex=6819e9c0&is=68189840&hm=314bfc2cf4f7e4aad5f2e0a67b2113a1a01efb5dff92e7acf625dd808a47d74d&');
+                url('https://cdn.discordapp.com/attachments/1359850695213449326/1369724303985344633/image.png?ex=681ce6aa&is=681b952a&hm=339e42ce9d7b811f7557e56a8a48783ae021d3a431bd692d6a131b7df82232de&');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -1968,4 +1968,299 @@ footer {
 .student-card.not-eligible:hover .eligibility-tag {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Toppers Page Styles */
+.toppers-section {
+    padding: 4rem 0;
+}
+
+.toppers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.toppers-category {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 188, 212, 0.1);
+    border: 2px solid #00bcd4;
+}
+
+.toppers-category h3 {
+    color: #00bcd4;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toppers-category h3 i {
+    color: #00bcd4;
+}
+
+.toppers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.topper-card {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0f7fa;
+}
+
+.topper-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.2);
+    border-color: #00bcd4;
+    background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+}
+
+.topper-card .rank {
+    background: #00bcd4;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-right: 1rem;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+}
+
+.topper-info h4 {
+    margin: 0;
+    color: #00838f;
+    font-size: 1.1rem;
+}
+
+.topper-info p {
+    margin: 0.25rem 0 0;
+    color: #006064;
+    font-size: 0.9rem;
+}
+
+/* Toppers Button Style */
+.toppers-button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.toppers-button:hover {
+    background-color: #0097a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Exam Card Toppers Button */
+.exam-card .toppers-button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exam-card .toppers-button:hover {
+    background-color: #0097a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Responsive adjustments for topper buttons */
+@media (max-width: 768px) {
+    .topper-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .topper-buttons .toppers-button {
+        max-width: 100%;
+    }
+}
+
+/* Preview Button Styles */
+.preview-btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.preview-btn i {
+    font-size: 1rem;
+}
+
+.preview-btn:hover {
+    background-color: #0097a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0f7fa;
+    position: relative;
+}
+
+.modal-header h3 {
+    color: #00bcd4;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-modal i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.close-modal:hover {
+    background-color: #e0f7fa;
+    color: #00bcd4;
+}
+
+.close-modal:hover i {
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.topper-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background-color: #e0f7fa;
+    transform: translateX(5px);
+}
+
+.detail-item i {
+    color: #00bcd4;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #00838f;
+    min-width: 120px;
+}
+
+.detail-value {
+    color: #006064;
+    font-weight: 500;
+}
+
+/* Responsive Modal Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .detail-label {
+        min-width: auto;
+    }
 }

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramzan Exam Toppers - Saiban e Zahra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1></h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="toppers-section">
+            <div class="container">
+                <h2>Ramzan Exam Toppers</h2>
+                
+                <div class="toppers-container">
+                    <div class="toppers-category">
+                        <h3><i class="fas fa-female"></i> Saiban Ladies Toppers</h3>
+                        <div class="toppers-list">
+                            <div class="topper-card">
+                                <div class="rank">1st</div>
+                                <div class="topper-info">
+                                    <h4>Urwa Niazi</h4>
+                                    <p>Roll No: 143 | Marks: 94%</p>
+                                    <button class="preview-btn" data-topper="urwa-niazi">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">2nd</div>
+                                <div class="topper-info">
+                                    <h4>Sadia Rizwan</h4>
+                                    <p>Roll No: 99 | Marks: 93%</p>
+                                    <button class="preview-btn" data-topper="sadia-rizwan">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">3th</div>
+                                <div class="topper-info">
+                                    <h4>Aliya Farheen</h4>
+                                    <p>Roll No: 161 | Marks: 92%</p>
+                                    <button class="preview-btn" data-topper="aliya-farheen">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">3th</div>
+                                <div class="topper-info">
+                                    <h4>Ferheen Zahra</h4>
+                                    <p>Roll No: 46 | Marks: 92%</p>
+                                    <button class="preview-btn" data-topper="ferheen-zahra">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="toppers-category">
+                        <h3><i class="fas fa-star"></i> Mumtazabad Ladies Toppers</h3>
+                        <div class="toppers-list">
+                            <div class="topper-card">
+                                <div class="rank">1st</div>
+                                <div class="topper-info">
+                                    <h4>Kissa Zahra Naqvi</h4>
+                                    <p>Roll No: 48 | Marks: 95%</p>
+                                    <button class="preview-btn" data-topper="kissa-zahra">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">2nd</div>
+                                <div class="topper-info">
+                                    <h4>Yasmeen Akbar</h4>
+                                    <p>Roll No: 2 | Marks: 93%</p>
+                                    <button class="preview-btn" data-topper="yasmeen-akbar">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">2nd</div>
+                                <div class="topper-info">
+                                    <h4>Sakina Batool</h4>
+                                    <p>Roll No: 71 | Marks: 93%</p>
+                                    <button class="preview-btn" data-topper="sakina-batool">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">2nd</div>
+                                <div class="topper-info">
+                                    <h4>Maryam Ali</h4>
+                                    <p>Roll No: 72 | Marks: 93%</p>
+                                    <button class="preview-btn" data-topper="maryam-ali">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div class="modal" id="topperModal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3>Topper Details</h3>
+            </div>
+            <div class="modal-body">
+                <div class="topper-details">
+                    <div class="detail-item">
+                        <i class="fas fa-user"></i>
+                        <span class="detail-label">Name:</span>
+                        <span class="detail-value" id="modalName"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-id-card"></i>
+                        <span class="detail-label">Roll Number:</span>
+                        <span class="detail-value" id="modalRoll"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-star"></i>
+                        <span class="detail-label">Marks Obtained:</span>
+                        <span class="detail-value" id="modalMarks"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-trophy"></i>
+                        <span class="detail-label">Rank:</span>
+                        <span class="detail-value" id="modalRank"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="detail-label">Category:</span>
+                        <span class="detail-value" id="modalCategory"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Saiban e Zahra. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('topperModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const previewBtns = document.querySelectorAll('.preview-btn');
+
+        // Topper data
+        const topperData = {
+            'urwa-niazi': {
+                name: 'Urwa Niazi',
+                roll: '143',
+                marks: '94%',
+                rank: '1st',
+                category: 'Saiban Ladies'
+            },
+            'sadia-rizwan': {
+                name: 'Sadia Rizwan',
+                roll: '99',
+                marks: '93%',
+                rank: '2nd',
+                category: 'Saiban Ladies'
+            },
+            'aliya-farheen': {
+                name: 'Aliya Farheen',
+                roll: '161',
+                marks: '92%',
+                rank: '3th',
+                category: 'Saiban Ladies'
+            },
+            'ferheen-zahra': {
+                name: 'Ferheen Zahra',
+                roll: '46',
+                marks: '92%',
+                rank: '3th',
+                category: 'Saiban Ladies'
+            },
+            'kissa-zahra': {
+                name: 'Kissa Zahra Naqvi',
+                roll: '48',
+                marks: '95%',
+                rank: '1st',
+                category: 'Mumtazabad Ladies'
+            },
+            'yasmeen-akbar': {
+                name: 'Yasmeen Akbar',
+                roll: '2',
+                marks: '93%',
+                rank: '2nd',
+                category: 'Mumtazabad Ladies'
+            },
+            'sakina-batool': {
+                name: 'Sakina Batool',
+                roll: '71',
+                marks: '93%',
+                rank: '2nd',
+                category: 'Mumtazabad Ladies'
+            },
+            'maryam-ali': {
+                name: 'Maryam Ali',
+                roll: '72',
+                marks: '93%',
+                rank: '2nd',
+                category: 'Mumtazabad Ladies'
+            }
+        };
+
+        // Function to close modal
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Open modal
+        previewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const topperId = btn.getAttribute('data-topper');
+                const data = topperData[topperId];
+                
+                document.getElementById('modalName').textContent = data.name;
+                document.getElementById('modalRoll').textContent = data.roll;
+                document.getElementById('modalMarks').textContent = data.marks;
+                document.getElementById('modalRank').textContent = data.rank;
+                document.getElementById('modalCategory').textContent = data.category;
+                
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal when clicking the close button
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html> 
