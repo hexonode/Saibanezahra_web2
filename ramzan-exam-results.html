@@ -863,7 +863,9 @@
             function populateGrid(grid, data, showPassOnly = false) {
                 grid.innerHTML = '';
                 const filteredData = showPassOnly ? data.filter(student => student.marks >= 70) : data;
-                filteredData.forEach(student => {
+                // Sort data by marks in descending order
+                const sortedData = [...filteredData].sort((a, b) => b.marks - a.marks);
+                sortedData.forEach(student => {
                     grid.appendChild(createStudentCard(student));
                 });
             }
