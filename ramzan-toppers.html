@@ -32,8 +32,20 @@
             <div class="container">
                 <h2>Ramzan Exam Toppers</h2>
                 
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="saiban-ladies">
+                        <i class="fas fa-female"></i> Saiban Ladies Toppers
+                    </button>
+                    <button class="category-btn" data-category="mumtazabad-ladies">
+                        <i class="fas fa-female"></i> Mumtazabad Ladies Toppers
+                    </button>
+                    <button class="category-btn" data-category="gents">
+                        <i class="fas fa-male"></i> Gents Toppers
+                    </button>
+                </div>
+
                 <div class="toppers-container">
-                    <div class="toppers-category">
+                    <div class="toppers-category" id="saiban-ladies">
                         <h3><i class="fas fa-female"></i> Saiban Ladies Toppers</h3>
                         <div class="toppers-list">
                             <div class="topper-card">
@@ -79,8 +91,8 @@
                         </div>
                     </div>
 
-                    <div class="toppers-category">
-                        <h3><i class="fas fa-star"></i> Mumtazabad Ladies Toppers</h3>
+                    <div class="toppers-category" id="mumtazabad-ladies">
+                        <h3><i class="fas fa-female"></i> Mumtazabad Ladies Toppers</h3>
                         <div class="toppers-list">
                             <div class="topper-card">
                                 <div class="rank">1st</div>
@@ -118,6 +130,52 @@
                                     <h4>Maryam Ali</h4>
                                     <p>Roll No: 72</p>
                                     <button class="preview-btn" data-topper="maryam-ali">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="toppers-category" id="gents">
+                        <h3><i class="fas fa-male"></i> Gents Toppers</h3>
+                        <div class="toppers-list">
+                            <div class="topper-card">
+                                <div class="rank">1st</div>
+                                <div class="topper-info">
+                                    <h4>Irtaza Hassan</h4>
+                                    <p>Roll No: 21</p>
+                                    <button class="preview-btn" data-topper="irtaza-hassan">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">2nd</div>
+                                <div class="topper-info">
+                                    <h4>Muhammad Saliq</h4>
+                                    <p>Roll No: 52</p>
+                                    <button class="preview-btn" data-topper="muhammad-saliq">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">3rd</div>
+                                <div class="topper-info">
+                                    <h4>Rehan Haider</h4>
+                                    <p>Roll No: 30</p>
+                                    <button class="preview-btn" data-topper="rehan-haider">
+                                        <i class="fas fa-eye"></i> Preview Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topper-card">
+                                <div class="rank">4th</div>
+                                <div class="topper-info">
+                                    <h4>Muhammad Hassan Mujata</h4>
+                                    <p>Roll No: 107</p>
+                                    <button class="preview-btn" data-topper="muhammad-hassan-mujata">
                                         <i class="fas fa-eye"></i> Preview Details
                                     </button>
                                 </div>
@@ -468,7 +526,7 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: #3498db;
+            background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -476,11 +534,15 @@
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
             z-index: 2;
+            min-width: 60px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .topper-info {
             position: relative;
             z-index: 2;
+            padding-right: 80px;
         }
 
         .topper-info h4 {
@@ -488,6 +550,7 @@
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            padding-right: 10px;
         }
 
         .topper-info p {
@@ -538,6 +601,58 @@
             .rank {
                 font-size: 1rem;
                 padding: 0.4rem 0.8rem;
+            }
+        }
+
+        /* Category Buttons Styles */
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: #fff;
+            border: 2px solid #3498db;
+            color: #3498db;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+        }
+
+        .category-btn:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .category-btn i {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .category-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .category-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -615,6 +730,38 @@
                 marks: '93%',
                 rank: '2nd',
                 category: 'Mumtazabad Ladies'
+            },
+            'irtaza-hassan': {
+                name: 'Irtaza Hassan',
+                roll: '21',
+                marks: '94%',
+                rank: '1st',
+                category: 'Gents',
+                attendance: '86%'
+            },
+            'muhammad-saliq': {
+                name: 'Muhammad Saliq',
+                roll: '52',
+                marks: '92%',
+                rank: '2nd',
+                category: 'Gents',
+                attendance: '90%'
+            },
+            'rehan-haider': {
+                name: 'Rehan Haider',
+                roll: '30',
+                marks: '86%',
+                rank: '3rd',
+                category: 'Gents',
+                attendance: '68%'
+            },
+            'muhammad-hassan-mujata': {
+                name: 'Muhammad Hassan Mujata',
+                roll: '107',
+                marks: '85%',
+                rank: '4th',
+                category: 'Gents',
+                attendance: '71%'
             }
         };
 
@@ -656,6 +803,36 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('show')) {
                 closeModal();
+            }
+        });
+
+        // Category switching functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const topperCategories = document.querySelectorAll('.toppers-category');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+                
+                // Hide all categories
+                topperCategories.forEach(cat => {
+                    cat.style.display = 'none';
+                });
+                
+                // Show selected category
+                document.getElementById(category).style.display = 'block';
+            });
+        });
+
+        // Initially hide all categories except saiban-ladies
+        topperCategories.forEach(cat => {
+            if (cat.id !== 'saiban-ladies') {
+                cat.style.display = 'none';
             }
         });
     </script>
